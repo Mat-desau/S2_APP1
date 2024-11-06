@@ -1,0 +1,374 @@
+Début des test
+
+
+.......			---- TEST UNITAIRES ---- 			.......
+
+---- TEST FORME ---- 
+Rectangle ---- 
+	GET ---- 
+	    reussi - rect1
+	    reussi - rect2
+	SET ---- 
+	    reussi - rect1
+	    reussi - rect2
+Cercle ---- 
+	GET ---- 
+	    reussi - cer1
+	    reussi - cer2
+	SET ---- 
+	    reussi - cer1
+	    reussi - cer2
+Carre ---- 
+	GET ---- 
+	    reussi - car1
+	    reussi - car2
+	SET ---- 
+	    reussi - car1
+	    reussi - car2
+
+---- TEST VECTEUR ---- 
+	Ajout ---- 
+	    reussi - rect
+	    reussi - cer
+	    reussi - car
+	GET ---- 
+	    reussi - rect
+	    reussi - car
+	    reussi - rien
+	    reussi - taille
+	    reussi - capacite
+	Remove ---- 
+	    reussi - rect
+	    reussi - cer
+	    reussi - car
+	    reussi - rien
+	    reussi - taille
+	    reussi - capacite
+	Clear ---- 
+	    reussi - taille
+	    reussi - vide
+
+---- TEST COUCHE ---- 
+	ADDForme ---- 
+	    reussi - rect
+	    reussi - cer
+	    reussi - car
+	GET ---- 
+	    reussi - rect
+	    reussi - car
+	    reussi - rien
+	Translater ---- 
+	    reussi - -10
+	    reussi - 10
+	Aire ---- 
+	    reussi - aire
+	Remove ---- 
+	    reussi - rect
+	    reussi - cer
+	    reussi - car
+	    reussi - rien
+	Etat ---- 
+Couche initialisee
+	    reussi - etat1
+	    reussi - etat3
+	    reussi - rect
+	    reussi - -10
+	    reussi - rect
+
+---- TEST CANEVAS ---- 
+	ADDForme ---- 
+	    reussi - f1
+	    reussi - f2
+	    reussi - f3
+	Translater ---- 
+	    reussi - -10
+	    reussi - 10
+	Aire ---- 
+	    reussi - aire
+	Etat ---- 
+	    reussi - etat
+	    reussi - etat
+	    reussi - etat
+	Remove ---- 
+	    reussi - remove
+	    reussi - remove
+
+
+.......			---- TEST APPCAS01 ---- 			.......
+
+TESTS APPLICATION (CAS 01)
+
+---------------------------------------------------
+                      Étape #1 : essay d'activer une couche invalide
+---------------------------------------------------
+couche#5 inexistente
+
+---------------------------------------------------
+                      Étape #2 : essay d'activer une couche invalide
+---------------------------------------------------
+couche#6 inexistente
+
+---------------------------------------------------
+                      Étape #3 : ajout de 2 formes rectangle
+---------------------------------------------------
+Ajout des formes suiventes : 
+Rectangle (x=0, y=0, l=1, h=1, aire=1)
+Rectangle (x=0, y=0, l=1, h=1, aire=1)
+
+---------------------------------------------------
+                      Étape #4
+---------------------------------------------------
+Afficher le canevas : 
+----- Couche 0
+Rectangle (x=0, y=0, l=1, h=1, aire=1)
+Rectangle (x=0, y=0, l=1, h=1, aire=1)
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+l'aire du canevas : 2
+
+---------------------------------------------------
+                      Étape #5 : activer la couche 0 et ajouter des formes carre avec des dimentions invalides
+---------------------------------------------------
+couche#0 inexistente
+Ajout des formes suiventes : 
+Carre (x=0, y=0, c=1, aire=1)
+Carre (x=1, y=1, c=1, aire=1)
+
+---------------------------------------------------
+                      Étape #6 : Translation
+---------------------------------------------------
+translation de x=-10 y=-10
+
+---------------------------------------------------
+                      Étape #7
+---------------------------------------------------
+Afficher le canevas : 
+----- Couche 0
+Rectangle (x=-10, y=-10, l=1, h=1, aire=1)
+Rectangle (x=-10, y=-10, l=1, h=1, aire=1)
+Carre (x=-10, y=-10, c=1, aire=1)
+Carre (x=-9, y=-9, c=1, aire=1)
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+l'aire du canevas : 4
+
+---------------------------------------------------
+                      Étape #8 : retirer les 2 premier element
+---------------------------------------------------
+retirer forme a la position 0
+retirer forme a la position 0
+
+---------------------------------------------------
+                      Étape #9
+---------------------------------------------------
+Afficher le canevas : 
+----- Couche 0
+Carre (x=-10, y=-10, c=1, aire=1)
+Carre (x=-9, y=-9, c=1, aire=1)
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+l'aire du canevas : 2
+
+---------------------------------------------------
+                      Étape #10 : renitialiser
+---------------------------------------------------
+Canevas renitialiser
+
+---------------------------------------------------
+                      Étape #11
+---------------------------------------------------
+Afficher le canevas : 
+----- Couche 0
+Couche initialisee
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+l'aire du canevas : 0
+			..FIN..  
+
+
+.......			---- TEST APPCAS02 ---- 			.......
+
+TESTS APPLICATION (CAS 02)
+
+---------------------------------------------------
+                      Étape #1 : activer la couche 3
+---------------------------------------------------
+couche#3 activer
+
+---------------------------------------------------
+                      Étape #2 : ajouter 15 formes
+---------------------------------------------------
+Ajout des formes suiventes : 
+Rectangle (x=0, y=0, l=1, h=1, aire=1)
+Rectangle (x=0, y=0, l=2, h=2, aire=4)
+Rectangle (x=0, y=0, l=3, h=3, aire=9)
+Rectangle (x=0, y=0, l=4, h=4, aire=16)
+Rectangle (x=0, y=0, l=5, h=5, aire=25)
+Rectangle (x=0, y=0, l=6, h=6, aire=36)
+Rectangle (x=0, y=0, l=7, h=7, aire=49)
+Rectangle (x=0, y=0, l=8, h=8, aire=64)
+Rectangle (x=0, y=0, l=9, h=9, aire=81)
+Rectangle (x=0, y=0, l=10, h=10, aire=100)
+Rectangle (x=0, y=0, l=11, h=11, aire=121)
+Rectangle (x=0, y=0, l=12, h=12, aire=144)
+Rectangle (x=0, y=0, l=13, h=13, aire=169)
+Rectangle (x=0, y=0, l=14, h=14, aire=196)
+Rectangle (x=0, y=0, l=15, h=15, aire=225)
+
+---------------------------------------------------
+                      Étape #3 : activer la couche 2
+---------------------------------------------------
+couche#2 activer
+
+---------------------------------------------------
+                      Étape #4 : ajouter des formes
+---------------------------------------------------
+Ajout des formes suiventes : 
+Cercle (x=0, y=0, r=7, aire=43.9823)
+Carre (x=4, y=4, c=5, aire=25)
+
+---------------------------------------------------
+                      Étape #5
+---------------------------------------------------
+Afficher le canevas : 
+----- Couche 0
+Couche initialisee
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Cercle (x=0, y=0, r=7, aire=43.9823)
+Carre (x=4, y=4, c=5, aire=25)
+----- Couche 3
+Rectangle (x=0, y=0, l=1, h=1, aire=1)
+Rectangle (x=0, y=0, l=2, h=2, aire=4)
+Rectangle (x=0, y=0, l=3, h=3, aire=9)
+Rectangle (x=0, y=0, l=4, h=4, aire=16)
+Rectangle (x=0, y=0, l=5, h=5, aire=25)
+Rectangle (x=0, y=0, l=6, h=6, aire=36)
+Rectangle (x=0, y=0, l=7, h=7, aire=49)
+Rectangle (x=0, y=0, l=8, h=8, aire=64)
+Rectangle (x=0, y=0, l=9, h=9, aire=81)
+Rectangle (x=0, y=0, l=10, h=10, aire=100)
+Rectangle (x=0, y=0, l=11, h=11, aire=121)
+Rectangle (x=0, y=0, l=12, h=12, aire=144)
+Rectangle (x=0, y=0, l=13, h=13, aire=169)
+Rectangle (x=0, y=0, l=14, h=14, aire=196)
+Rectangle (x=0, y=0, l=15, h=15, aire=225)
+----- Couche 4
+Couche initialisee
+l'aire du canevas : 1308.98
+
+---------------------------------------------------
+                      Étape #6 : activer la couche 3 et retirer 2 forme /(la 10 et 11/)
+---------------------------------------------------
+couche#3 activer
+retirer forme a la position 10
+retirer forme a la position 10
+
+---------------------------------------------------
+                      Étape #7
+---------------------------------------------------
+Afficher le canevas : 
+----- Couche 0
+Couche initialisee
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Cercle (x=0, y=0, r=7, aire=43.9823)
+Carre (x=4, y=4, c=5, aire=25)
+----- Couche 3
+Rectangle (x=0, y=0, l=1, h=1, aire=1)
+Rectangle (x=0, y=0, l=2, h=2, aire=4)
+Rectangle (x=0, y=0, l=3, h=3, aire=9)
+Rectangle (x=0, y=0, l=4, h=4, aire=16)
+Rectangle (x=0, y=0, l=5, h=5, aire=25)
+Rectangle (x=0, y=0, l=6, h=6, aire=36)
+Rectangle (x=0, y=0, l=7, h=7, aire=49)
+Rectangle (x=0, y=0, l=8, h=8, aire=64)
+Rectangle (x=0, y=0, l=9, h=9, aire=81)
+Rectangle (x=0, y=0, l=10, h=10, aire=100)
+Rectangle (x=0, y=0, l=13, h=13, aire=169)
+Rectangle (x=0, y=0, l=14, h=14, aire=196)
+Rectangle (x=0, y=0, l=15, h=15, aire=225)
+----- Couche 4
+Couche initialisee
+l'aire du canevas : 1043.98
+
+---------------------------------------------------
+                      Étape #8 : activer la couche 4
+---------------------------------------------------
+couche#4 activer
+
+---------------------------------------------------
+                      Étape #9 : test si impossible de retirer avec un mauvais index
+---------------------------------------------------
+imposible de retirer
+
+---------------------------------------------------
+                      Étape #10 : renitialiser
+---------------------------------------------------
+Canevas renitialiser
+
+---------------------------------------------------
+                      Étape #11
+---------------------------------------------------
+Afficher le canevas : 
+----- Couche 0
+Couche initialisee
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+l'aire du canevas : 0
+
+---------------------------------------------------
+                      Étape #12 : test si la couche de base active est bien la couche 0
+---------------------------------------------------
+Ajout des formes suiventes : 
+Cercle (x=0, y=0, r=7, aire=43.9823)
+Carre (x=4, y=4, c=5, aire=25)
+
+---------------------------------------------------
+                      Étape #13
+---------------------------------------------------
+Afficher le canevas : 
+----- Couche 0
+Cercle (x=0, y=0, r=7, aire=43.9823)
+Carre (x=4, y=4, c=5, aire=25)
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+			..FIN..  
